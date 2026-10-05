@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cocoa Rush | Chocolate Delivered in 20 Minutes</title>
+  <meta name="description" content="Milk, dark, white and filled chocolates delivered in 20 minutes. Free delivery within 20 km.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#home">Cocoa Rush</a>
+    <nav aria-label="Main">
+      <a href="#shop">Chocolates</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="badge">Delivery in 20 minutes</p>
+        <h1>Chocolate at your door before it stops melting.</h1>
+        <p class="lead">Milk, dark, white and filled bars made fresh. Delivery is free within 20 km of our shop.</p>
+        <a class="btn" href="#shop">Shop chocolates</a>
+        <a class="btn ghost" href="#delivery">Check my area</a>
+      </div>
+      <div class="bar" aria-hidden="true" id="bar"></div>
+    </section>
+
+    <section class="strip">
+      <p>Milk</p><p>Dark</p><p>White</p><p>Ruby</p><p>Hazelnut</p><p>Caramel</p><p>Almond</p><p>Truffle</p>
+    </section>
+
+    <section class="shop" id="shop">
+      <h2>Pick your chocolate</h2>
+      <div class="filters" role="group" aria-label="Chocolate types">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="milk">Dairy milk</button>
+        <button class="chip" data-filter="dark">Dark</button>
+        <button class="chip" data-filter="white">White &amp; ruby</button>
+        <button class="chip" data-filter="filled">Nutty &amp; filled</button>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section class="delivery" id="delivery">
+      <div>
+        <h2>20 minutes. Free within 20 km.</h2>
+        <p>Enter how far you are from our shop to see your delivery details.</p>
+        <form id="distForm" class="dist">
+          <label for="km">Distance in km</label>
+          <input id="km" type="number" min="0" step="0.1" placeholder="e.g. 8" required>
+          <button class="btn" type="submit">Check delivery</button>
+        </form>
+        <p id="distResult" class="result" role="status"></p>
+      </div>
+      <ul class="facts">
+        <li><strong>20 min</strong> average delivery time</li>
+        <li><strong>₹0</strong> shipping within 20 km</li>
+        <li><strong>Cool box</strong> keeps every bar from melting</li>
+      </ul>
+    </section>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-label="Shopping cart" hidden>
+    <div class="drawer-head"><h2>Your cart</h2><button id="closeCart">Close</button></div>
+    <ul id="cartItems"></ul>
+    <p class="total">Total: <strong id="cartTotal">₹0</strong></p>
+    <p class="note">Free delivery within 20 km. Arrives in about 20 minutes.</p>
+    <button class="btn full" id="checkout">Place order</button>
+  </aside>
+
+  <footer id="contact">
+    <div>
+      <h3>Cocoa Rush</h3>
+      <p>Open daily, 9 AM to 11 PM</p>
+    </div>
+    <form id="contactForm">
+      <h3>Send us a message</h3>
+      <label>Name <input type="text" id="name" required></label>
+      <label>Message <textarea id="msg" rows="3" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <p id="formMsg" role="status"></p>
+    </form>
+  </footer>
+  <p class="copy">© 2026 Cocoa Rush. Internship project.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
